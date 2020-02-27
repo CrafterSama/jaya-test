@@ -33,12 +33,14 @@ const Posts = () => {
             </thead>
             <tbody>
                 {posts ? (
-                    <tr>
-                        <td scope="row">{posts.userId}</td>
-                        <td>{posts.id}</td>
-                        <td>{posts.title}</td>
-                        <td>{posts.body}</td>
-                    </tr>
+                    posts.map((post, index) => (
+                        <tr key={index}>
+                            <td scope="row">{post.userId}</td>
+                            <td>{post.id}</td>
+                            <td>{post.title}</td>
+                            <td>{post.body}</td>
+                        </tr>
+                    ))
                 ) : (
                     <tr>
                         <td colspaw="4">Loading...</td>
